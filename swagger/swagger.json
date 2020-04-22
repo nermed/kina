@@ -1,0 +1,13 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Api Swagger",
+        "version": "O.1"
+    },
+    "servers": [
+        {
+            "url": "http://api.kina.fr/v1",
+            "description": "Api"
+        }
+    ]
+}

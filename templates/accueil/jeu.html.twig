@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    Jeu
+{% endblock title %}
+{% block body %}
+    <div class="jumbotron text-center">
+        <h2>Nos jeux</h2>
+        <p>Nous sommes à votre disposition pour vous divertir</p>
+    </div>
+        <div class="container">
+            <div class="row">
+                {% for jeu in jeux %}
+                <div class="col-sm-4 mb-4" style="cursor: pointer;">
+                    <div class= "card">
+                         <img src="{{ jeu.image }}" alt="">
+                        <div class="card-body" style="width: 25rem;">
+                        <h5>{{ jeu.title }}</h5>
+                         <p class="card-text">{{ jeu.description | raw }}</p>
+                    </div>                
+                </div>
+                </div>
+                                   
+                {% endfor %}                
+            </div>
+    </div>
+    
+    
+{% endblock body %}

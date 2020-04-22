@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+    <div class="jumbotron text-center">
+        <h1>Bienvenu</h1>
+        <p>Pour votre plaisir</p>
+    </div>
+    <div class="container">
+        <h1 style="color: blue;"><a href=" {{ path('game_show')}} ">Nos jeux</a></h1>
+    <div class="row">
+            {% for jeu in jeux %}
+            <div class="col-sm-4 mb-4" style="cursor: pointer;">
+                    <h2>{{ jeu.title }}</h2>
+                    <div class="content">
+                        <img src="{{ jeu.image }}" alt="">
+                        {{ jeu.description | raw }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="container">
+        <h1 style="color: blue;"><a href=" {{ path('activity_show')}} ">Nos activités</a></h1>
+    <div class="row">
+            {% for activity in activities %}
+            <div class="col-sm-4"
+                    <h2>{{ activity.title }}</h2>
+                    <div class="content">
+                        <img src="{{ activity.image }}" alt="">
+                        {{ activity.description | raw }}
+                    </div>
+                </div>
+            {% endfor %}
+    </div>
+    </div>
+        
+   
+{% endblock body %}

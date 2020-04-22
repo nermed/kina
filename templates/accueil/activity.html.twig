@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    Activités
+{% endblock title %}
+{% block body %}
+    <div class="jumbotron text-center">
+        <h2>Nos activités</h2>
+        <p>Nous sommes à votre disposition pour vous divertir</p>
+    </div>
+    <div class="container">
+    <div class="row">
+        {% for activity in activities %}
+        <div class="col-sm-4 mb-4" style="cursor: pointer;">
+            <div class= "card">
+                <img src="{{ activity.image }}" alt="">
+                <div class="card-body" style="width: 20rem;">
+                    <h5>{{ activity.title }}</h5>
+                <p   class="card-text">{{ activity.description | raw }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+{% endblock body %}

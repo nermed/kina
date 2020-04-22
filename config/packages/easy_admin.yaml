@@ -1,0 +1,29 @@
+# config/packages/easy_admin.yaml
+easy_admin:
+    design:
+        brand_color: '#1ABC9C'
+        menu: ['Jeu', 'Activity', 'Category']
+    entities:
+        # change the following to the namespaces of your own entities
+        Jeu:
+            class: App\Entity\Jeu
+            list:
+                fields:
+                    - title
+                    - description
+                    - { property: 'image', template: 'vich_uploader.html.twig' }
+                    - categories
+            
+        Category:
+            class: App\Entity\Category
+            list:
+                fields:
+                    - title
+        Activity:
+            class: App\Entity\Activity
+            list:
+                fields:
+                    - title
+                    - description
+                    - { property: 'image', type: 'ckeditor'}
+                    - categories
